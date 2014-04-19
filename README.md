@@ -9,12 +9,12 @@
 GET /api/1/articles.json
 ```
 
-Key|Default|Description
----|-------|-----------
-since|なし|指定日時以降に更新された記事を返します（指定時刻は含まない）。数値の場合は Unix 時刻と解釈し、それ以外の場合は Ruby で <code>DateTime.parse</code> を試みます。いずれも失敗した場合、 400 エラーを返します
-until|なし|指定日時以前に更新された記事を返します（指定時刻は含まない）。指定は since 同様です
-limit|12|上限の件数を指定します
-callback|なし|指定した場合、 JSONP 形式で返すようになります（未実装）
+Key|Default|Required|Description
+---|-------|--------|-----------
+since|-|No|指定日時以降に更新された記事を返します（指定時刻は含まない）。数値の場合は Unix 時刻と解釈し、それ以外の場合は Ruby で <code>DateTime.parse</code> を試みます。いずれも失敗した場合、 400 エラーを返します
+until|-|No|指定日時以前に更新された記事を返します（指定時刻は含まない）。指定は since 同様です
+limit|12|No|上限の件数を指定します
+callback|-|No|指定した場合、 JSONP 形式で返すようになります（未実装）
 
 ### Response
 
@@ -25,6 +25,40 @@ Status|Description
 404 Not Found|指定の条件で1件も該当なし
 500 Internal Server Error|内部サーバーエラー
 
+Key|Description
+---|-----------
+status|'OK' / 'NG'
+message|エラーの場合、エラー内容が格納されることがあります
+articles|記事の配列。中身は下記の例を参照
+cursor|続きを読み込みたい場合に指定するパス
+
+下記はレスポンスの例です。
+
+```
+{
+  "status": "OK",
+  "message": null,
+  "articles": [
+    {
+      "published_at": "2014-04-02T00:00:00.000+09:00",
+      "link_url": "http://youcune.com/mono/column/worked_5_years.html",
+      "title": "4月から社会人5年目になる俺へ"
+    },
+    {
+      "published_at": "2014-03-22T00:00:00.000+09:00",
+      "link_url": "http://youcune.com/mono/mac/mac_operation.html",
+      "title": "MacBook Proを買ったので運用を考えなおしてみた"
+    },
+    {
+      "published_at": "2014-02-08T00:00:00.000+09:00",
+      "link_url": "http://youcune.com/mono/photo/snowy_night.html",
+      "title": "雪の降る夜にフラッシュ撮影すると面白い"
+    }
+  ],
+  "cursor": "/api/1/articles.json?until=1391785200"
+}
+```
+
 ## Fetch Articles API
 指定したブログの記事データを手動で更新する場合に使用します。 Wordpress などで更新通知 Ping の送信先に指定することを想定しています。
 
@@ -33,5 +67,5 @@ Status|Description
 ### Request
 
 ```
-POST /api/1/fetch/(source_id).json
+POST /api/1/fetch/:source_id.json
 ```
