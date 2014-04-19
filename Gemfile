@@ -2,8 +2,10 @@ source 'https://rubygems.org'
 
 # Rails
 gem 'rails', '4.1.0'
+gem 'spring'
 
 # Views
+gem 'jbuilder'
 gem 'haml-rails'
 
 # Assets
@@ -13,13 +15,21 @@ gem 'uglifier'
 gem 'jquery-rails'
 gem 'therubyracer'
 
+# Databases
+gem 'kakurenbo'
+
+# ActiveAdmin
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'polyamorous', github: 'activerecord-hackery/polyamorous'
+gem 'ransack',     github: 'activerecord-hackery/ransack'
+gem 'formtastic',  github: 'justinfrench/formtastic'
+
 group :development do
   # Debugging
   gem 'better_errors'
   gem 'binding_of_caller'
 
   # CLI Tools
-  gem 'spring'
   gem 'rspec-kickstarter'
 end
 
