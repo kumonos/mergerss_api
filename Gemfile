@@ -2,16 +2,26 @@ source 'https://rubygems.org'
 
 # Rails
 gem 'rails', '4.1.0'
+gem 'spring'
 
 # Views
+gem 'jbuilder'
 gem 'haml-rails'
+gem 'bootstrap-sass', '~> 3.1.1'
+gem 'font-awesome-sass'
 
 # Assets
-gem 'sass-rails'
+gem 'sass-rails', '>= 3.2'
 gem 'coffee-rails'
 gem 'uglifier'
 gem 'jquery-rails'
 gem 'therubyracer'
+
+# Databases
+gem 'kakurenbo'
+
+# ActiveAdmin
+gem 'activeadmin', github: 'gregbell/active_admin'
 
 group :development do
   # Debugging
@@ -19,7 +29,6 @@ group :development do
   gem 'binding_of_caller'
 
   # CLI Tools
-  gem 'spring'
   gem 'rspec-kickstarter'
 end
 

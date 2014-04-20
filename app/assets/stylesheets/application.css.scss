@@ -1,0 +1,11 @@
+// Font Awesome
+//= require font-awesome
+
+// Application CSS
+//= require demo
+
+// Bootstrap
+$font-family-sans-serif: 'Lucida Grande', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+$font-family-serif: Georgia, 'Hiragino Mincho ProN', serif;
+$font-family-monospace: Menlo, 'Courier New', 'Hiragino Kaku Gothic ProN', monospace;
+@import 'bootstrap-custom';
