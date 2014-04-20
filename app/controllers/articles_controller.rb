@@ -15,12 +15,16 @@ class ArticlesController < ApplicationController
       @articles = @articles.limit(limit) if limit.present?
       @articles = @articles.order(published_at: :desc)
 
+      # set cursor
+      @cursor = "/api/1/articles.json?until=#{@articles.last.published_at_unix}&limit=#{limit}" if @articles.any?
+
       # render
       render formats: :json, status: @articles.count.zero? ? :not_found : :ok
     rescue DateTimeParseError => e
       # 日付の解釈失敗
       render json: { status: 'NG', message: e.message }, status: :bad_request
     rescue => e
+      Rails.logger.fatal e
       render json: { status: 'NG', message: 'Internal Server Error' }, status: :internal_server_error
     end
   end

@@ -7,9 +7,11 @@ gem 'spring'
 # Views
 gem 'jbuilder'
 gem 'haml-rails'
+gem 'bootstrap-sass', '~> 3.1.1'
+gem 'font-awesome-sass'
 
 # Assets
-gem 'sass-rails'
+gem 'sass-rails', '>= 3.2'
 gem 'coffee-rails'
 gem 'uglifier'
 gem 'jquery-rails'
@@ -20,9 +22,6 @@ gem 'kakurenbo'
 
 # ActiveAdmin
 gem 'activeadmin', github: 'gregbell/active_admin'
-gem 'polyamorous', github: 'activerecord-hackery/polyamorous'
-gem 'ransack',     github: 'activerecord-hackery/ransack'
-gem 'formtastic',  github: 'justinfrench/formtastic'
 
 group :development do
   # Debugging

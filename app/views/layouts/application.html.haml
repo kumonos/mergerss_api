@@ -3,8 +3,8 @@
   %head
     %meta{ charset: 'UTF-8' }
     %meta{ name: 'viewport', content: 'initial-scale=1.0, user-scalable=no' }
-    = stylesheet_link_tag '/stylesheets/youstrap-s.min.css'
-    %title Merge RSS JSON REST API Specs
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag '/javascripts/jquery-2.1.0.min.js', 'application'
+    %title Merge RSS JSON REST API DEMO
   %body
-    .container
-      = yield
+    = yield

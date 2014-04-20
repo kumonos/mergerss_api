@@ -40,22 +40,28 @@ cursor|続きを読み込みたい場合に指定するパス
   "message": null,
   "articles": [
     {
-      "published_at": "2014-04-02T00:00:00.000+09:00",
+      "title": "4月から社会人5年目になる俺へ",
       "link_url": "http://youcune.com/mono/column/worked_5_years.html",
-      "title": "4月から社会人5年目になる俺へ"
+      "published_at": "2014/04/01 15:00:00",
+      "published_at_iso8601": "2014-04-01T15:00:00+09:00",
+      "published_at_unix": 1396332000
     },
     {
-      "published_at": "2014-03-22T00:00:00.000+09:00",
+      "title": "MacBook Proを買ったので運用を考えなおしてみた",
       "link_url": "http://youcune.com/mono/mac/mac_operation.html",
-      "title": "MacBook Proを買ったので運用を考えなおしてみた"
+      "published_at": "2014/03/21 15:00:00",
+      "published_at_iso8601": "2014-03-21T15:00:00+09:00",
+      "published_at_unix": 1395381600
     },
     {
-      "published_at": "2014-02-08T00:00:00.000+09:00",
+      "title": "雪の降る夜にフラッシュ撮影すると面白い",
       "link_url": "http://youcune.com/mono/photo/snowy_night.html",
-      "title": "雪の降る夜にフラッシュ撮影すると面白い"
+      "published_at": "2014/02/07 15:00:00",
+      "published_at_iso8601": "2014-02-07T15:00:00+09:00",
+      "published_at_unix": 1391752800
     }
   ],
-  "cursor": "/api/1/articles.json?until=1391785200"
+  "cursor": "/api/1/articles.json?until=1391752800\u0026limit=12"
 }
 ```
 
