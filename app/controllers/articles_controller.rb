@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   # GET /api/1/articles.json
   def index
-    @articles = Article.all
+    @articles = Article.includes(:source)
 
     begin
       # parse parameters
