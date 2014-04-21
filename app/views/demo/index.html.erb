@@ -7,7 +7,11 @@
   {{#each articles}}
   <article class="activity">
     <h2><a href="{{link_url}}">{{title}}</a></h2>
-    <time datetime="{{published_at_iso8601}}"><i class="fa fa-clock-o"></i> {{published_at}}</time>
+    <ul>
+      <li><i class="fa fa-globe"></i> <a href="{{source_link_url}}">{{source_name}}</a></li>
+      <li><i class="fa fa-user"></i> <a href="{{member_link_url}}">{{member_name}}</a></li>
+      <li><time datetime="{{published_at_iso8601}}"><i class="fa fa-clock-o"></i> {{published_at}}</time></li>
+    </ul>
   </article>
   {{/each}}
 </script>

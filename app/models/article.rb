@@ -3,6 +3,7 @@ class Article < ActiveRecord::Base
   # Relations
   # ------------------------------------------------------------------
   belongs_to :source
+  delegate :member, to: :source, allow_nil: true
 
   # ------------------------------------------------------------------
   # Public Instance Methods
