@@ -23,7 +23,7 @@ class RSSParser
         articles << Article.new(
             title: entry.title.content,
             summary: entry.content.content,
-            link_url: entry.id.content,
+            link_url: entry.link.href,
             published_at: entry.published.content.to_datetime
         )
       end

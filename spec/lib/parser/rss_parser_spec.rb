@@ -89,7 +89,7 @@ describe RSSParser do
           <entry>
             <title>4月から社会人5年目になる俺へ</title>
             <link rel="alternate" href="http://youcune.com/mono/column/worked_5_years.html"/>
-            <id>http://youcune.com/mono/column/worked_5_years.html</id>
+            <id>monolog:column/worked_5_years.html</id>
             <published>2014-04-01T15:00:00Z</published>
             <updated>2014-04-01T15:00:00Z</updated>
             <author>
@@ -102,7 +102,7 @@ describe RSSParser do
           <entry>
             <title>MacBook Proを買ったので運用を考えなおしてみた</title>
             <link rel="alternate" href="http://youcune.com/mono/mac/mac_operation.html"/>
-            <id>http://youcune.com/mono/mac/mac_operation.html</id>
+            <id>monolog:mac/mac_operation.html</id>
             <published>2014-03-21T15:00:00Z</published>
             <updated>2014-03-21T15:00:00Z</updated>
             <author>
