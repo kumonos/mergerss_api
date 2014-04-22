@@ -44,21 +44,33 @@ cursor|続きを読み込みたい場合に指定するパス
       "link_url": "http://youcune.com/mono/column/worked_5_years.html",
       "published_at": "2014/04/01 15:00:00",
       "published_at_iso8601": "2014-04-01T15:00:00+09:00",
-      "published_at_unix": 1396332000
+      "published_at_unix": 1396332000,
+      "source_name":"Monolog",
+      "source_link_url":"http://youcune.com/mono/",
+      "member_name":"なかにしゆう",
+      "member_link_url":"http://youcune.com/"
     },
     {
       "title": "MacBook Proを買ったので運用を考えなおしてみた",
       "link_url": "http://youcune.com/mono/mac/mac_operation.html",
       "published_at": "2014/03/21 15:00:00",
       "published_at_iso8601": "2014-03-21T15:00:00+09:00",
-      "published_at_unix": 1395381600
+      "published_at_unix": 1395381600,
+      "source_name":"Monolog",
+      "source_link_url":"http://youcune.com/mono/",
+      "member_name":"なかにしゆう",
+      "member_link_url":"http://youcune.com/"
     },
     {
       "title": "雪の降る夜にフラッシュ撮影すると面白い",
       "link_url": "http://youcune.com/mono/photo/snowy_night.html",
       "published_at": "2014/02/07 15:00:00",
       "published_at_iso8601": "2014-02-07T15:00:00+09:00",
-      "published_at_unix": 1391752800
+      "published_at_unix": 1391752800,
+      "source_name":"Monolog",
+      "source_link_url":"http://youcune.com/mono/",
+      "member_name":"なかにしゆう",
+      "member_link_url":"http://youcune.com/"
     }
   ],
   "cursor": "/api/1/articles.json?until=1391752800\u0026limit=12"
