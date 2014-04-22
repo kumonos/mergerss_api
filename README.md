@@ -1,4 +1,4 @@
-# Merge RSS JSON REST API Specs
+# Merge RSS JSON REST API Specs [![Build Status](https://travis-ci.org/kumonos/mergerss_api.svg?branch=master)](https://travis-ci.org/kumonos/mergerss_api)
 
 ## List Articles API
 記事を投稿日の新しい順に返します。
