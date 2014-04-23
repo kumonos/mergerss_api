@@ -1,6 +1,6 @@
 # Merge RSS JSON REST API Specs [![Build Status](https://travis-ci.org/kumonos/mergerss_api.svg?branch=master)](https://travis-ci.org/kumonos/mergerss_api)
 
-## List Articles API
+## Index Articles API
 記事を投稿日の新しい順に返します。
 
 ### Request
@@ -45,10 +45,11 @@ cursor|続きを読み込みたい場合に指定するパス
       "published_at": "2014/04/01 15:00:00",
       "published_at_iso8601": "2014-04-01T15:00:00+09:00",
       "published_at_unix": 1396332000,
+      "source_id":1,
       "source_name":"Monolog",
       "source_link_url":"http://youcune.com/mono/",
-      "member_name":"なかにしゆう",
-      "member_link_url":"http://youcune.com/"
+      "member_id":1,
+      "member_name":"なかにしゆう"
     },
     {
       "title": "MacBook Proを買ったので運用を考えなおしてみた",
@@ -56,10 +57,11 @@ cursor|続きを読み込みたい場合に指定するパス
       "published_at": "2014/03/21 15:00:00",
       "published_at_iso8601": "2014-03-21T15:00:00+09:00",
       "published_at_unix": 1395381600,
+      "source_id":1,
       "source_name":"Monolog",
       "source_link_url":"http://youcune.com/mono/",
-      "member_name":"なかにしゆう",
-      "member_link_url":"http://youcune.com/"
+      "member_id":1,
+      "member_name":"なかにしゆう"
     },
     {
       "title": "雪の降る夜にフラッシュ撮影すると面白い",
@@ -67,13 +69,61 @@ cursor|続きを読み込みたい場合に指定するパス
       "published_at": "2014/02/07 15:00:00",
       "published_at_iso8601": "2014-02-07T15:00:00+09:00",
       "published_at_unix": 1391752800,
+      "source_id":1,
       "source_name":"Monolog",
       "source_link_url":"http://youcune.com/mono/",
-      "member_name":"なかにしゆう",
-      "member_link_url":"http://youcune.com/"
+      "member_id":1,
+      "member_name":"なかにしゆう"
     }
   ],
-  "cursor": "/api/1/articles.json?until=1391752800\u0026limit=12"
+  "cursor": "/api/1/articles.json?until=1391752800&limit=12"
+}
+```
+
+## Show Member API
+
+指定した著者の情報を取得します。
+
+### Request
+
+```
+GET /api/1/members/:member_id.json
+```
+
+Key|Default|Required|Description
+---|-------|--------|-----------
+member_id|-|Yes|情報を取得したい member_id
+
+### Response
+
+Status|Description
+------|-----------
+200 OK|正常終了
+400 Bad Request|パラメータが不正
+404 Not Found|指定の member がいない
+500 Internal Server Error|内部サーバーエラー
+
+Key|Description
+---|-----------
+status|'OK' / 'NG'
+message|エラーの場合、エラー内容が格納されることがあります
+name|名前
+email|電子メールアドレス
+description|紹介文
+link_url|著者オフィシャルページ
+image_url|画像
+
+下記はレスポンスの例です。
+
+```
+{
+  "status": "OK",
+  "message": null,
+  "name": "なかにしゆう",
+  "email": "you@nakanishi.email",
+  "description": "26歳。世界最大級の外資系IT企業I社にて公共・製造・流通業界のSEを経て、現在は日本最大級の医療系IT企業M社にて医者向け転職サイトの開発に従事。得意な言語はRails、関西弁",
+  "link_url": "http://youcune.com/",
+  "image_url": "https://secure.gravatar.com/avatar/bda36e025600f9e5a400dea0a1f08db1"
 }
 ```
 

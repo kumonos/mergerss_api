@@ -3,18 +3,45 @@
   <div id="activities"></div>
   <div style="clear: left;"><button id="load" class="btn btn-primary btn-lg btn-block"><i class="fa fa-ellipsis-h"></i> 続きを読み込む</button></div>
 </div>
+
+<div class="modal fade" id="member-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" id="member"></div>
+  </div>
+</div>
+
+<!-- Templates -->
 <script id="activity-template" type="text/x-handlebars-template">
   {{#each articles}}
-  <article class="activity">
-    <h2><a href="{{link_url}}">{{title}}</a></h2>
-    <ul>
-      <li><i class="fa fa-globe"></i> <a href="{{source_link_url}}">{{source_name}}</a></li>
-      <li><i class="fa fa-user"></i> <a href="{{member_link_url}}">{{member_name}}</a></li>
-      <li><time datetime="{{published_at_iso8601}}"><i class="fa fa-clock-o"></i> {{published_at}}</time></li>
-    </ul>
-  </article>
+    <article class="activity">
+      <h2><a href="{{link_url}}">{{title}}</a></h2>
+      <ul>
+        <li><i class="fa fa-globe"></i> <a href="{{source_link_url}}">{{source_name}}</a></li>
+        <li><i class="fa fa-user"></i> <a href="javascript:void(0);" onclick="show_member({{member_id}});">{{member_name}}</a></li>
+        <li><time datetime="{{published_at_iso8601}}"><i class="fa fa-clock-o"></i> {{published_at}}</time></li>
+      </ul>
+    </article>
   {{/each}}
 </script>
 <div id="no-more-articles-template">
   <article class="activity">もうなにもありません</article>
 </div>
+<script id="member-template" type="text/x-handlebars-template">
+  <div class="modal-header">
+    <h4 class="modal-title">{{name}}</h4>
+  </div>
+  <div class="modal-body">
+    <ul>
+      {{#if link_url}}
+        <li><i class="fa fa-globe"></i> <a href="{{link_url}}">{{link_url}}</a></li>
+      {{/if}}
+      {{#if email}}
+        <li><i class="fa fa-envelope-o"></i> <a href="mailto:{{email}}">{{email}}</a></li>
+      {{/if}}
+    </ul>
+    {{description}}
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> 閉じる</button>
+  </div>
+</script>

@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe ArticlesController do
-
   describe 'GET index' do
     before do
       @member = create(:member)
