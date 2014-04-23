@@ -1,5 +1,5 @@
 ActiveAdmin.register Member do
-  permit_params :name, :description, :link_url, :image_url, :last_published_at
+  permit_params :name, :description, :email, :link_url, :image_url, :last_published_at
 
   # See permitted parameters documentation:
   # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
