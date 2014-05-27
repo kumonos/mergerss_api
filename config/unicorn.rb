@@ -1,3 +1,3 @@
 listen '/apps/mergerss-api/tmp/sockets/unicorn.sock'
-pid '/apps/mergerss-apitmp/pids/unicorn.pid'
+pid '/apps/mergerss-api/tmp/pids/unicorn.pid'
 worker_processes 3
