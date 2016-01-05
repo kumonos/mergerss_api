@@ -1,5 +1,7 @@
 # Merge RSS JSON REST API Specs [![Build Status](https://travis-ci.org/kumonos/mergerss_api.svg?branch=master)](https://travis-ci.org/kumonos/mergerss_api)
 
+[![Join the chat at https://gitter.im/kumonos/mergerss_api](https://badges.gitter.im/kumonos/mergerss_api.svg)](https://gitter.im/kumonos/mergerss_api?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## Index Articles API
 記事を投稿日の新しい順に返します。
 
